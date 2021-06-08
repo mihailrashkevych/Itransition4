@@ -29,7 +29,8 @@ namespace Project1
         {
             services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            //"Server=tcp:mirashsqlserver.database.windows.net,1433;Database=coreDB;User ID=mi_rash;Password=Esper89ryty;Encrypt=true;Connection Timeout=30;"
+            //"Server=tcp:mirashdb.database.windows.net,1433;Database=coreDB;User ID=<username>;Password=<password>;Encrypt=true;Connection Timeout=30;"
+            //https://mihailrash@userscontrol.scm.azurewebsites.net/userscontrol.git
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.
