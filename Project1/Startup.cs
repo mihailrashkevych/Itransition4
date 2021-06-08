@@ -28,9 +28,8 @@ namespace Project1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-
+        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            //"Server=tcp:mirashsqlserver.database.windows.net,1433;Database=coreDB;User ID=mi_rash;Password=Esper89ryty;Encrypt=true;Connection Timeout=30;"
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.

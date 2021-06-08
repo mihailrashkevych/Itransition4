@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Project1.Data.Migrations
+namespace Project1.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,7 +39,12 @@ namespace Project1.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    RegisteringDate = table.Column<DateTime>(nullable: false),
+                    LastSigningDate = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<string>(nullable: true),
+                    isChecked = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
